@@ -28,7 +28,7 @@ var isGeom = function(seq) {
   return true;
 };
 var nextGeom = function(seq) {
-  return seq[seq.length-1]^2/seq[seq.length-2];
+  return Math.pow(seq[seq.length-1],2) / seq[seq.length-2];
 };
 
 var nextInSeq = function(seq) {
@@ -37,3 +37,28 @@ var nextInSeq = function(seq) {
   if(isFib(seq)){return nextFib(seq);}
   return 0;
 };
+
+console.log("arithmetic sequences:");
+console.log("[0,1,2]");
+console.log(nextInSeq([0,1,2]));
+console.log("[5,7,9]");
+console.log(nextInSeq([5,7,9]));
+
+console.log("geometric sequences:");
+console.log("[1,2,4]");
+console.log(nextInSeq([1,2,4]));
+console.log("[1,-1,1]");
+console.log(nextInSeq([1,-1,1]));
+
+console.log("fibonacci sequences");
+console.log("[0,1,1]");
+console.log(nextInSeq([0,1,1]));
+console.log("[6,7,13]");
+console.log(nextInSeq([6,7,13]));
+
+console.log("unknown sequences:");
+console.log("[2,4,27] Ackermann Sequence (next is 4^4^4^4 which has 10^154 digits)");
+console.log(nextInSeq([2,4,27]));
+console.log("[1,6,21,107] Busy Beaver Sequence (next hasn't been pinned down but is greater than 47,176,870)");
+console.log(nextInSeq([1,6,21,107]));
+

@@ -1,13 +1,24 @@
 
 
 var fibLessThan = function(n) {
-  if(n<1){return [];}
-  for(var a = [0,1]; a[a.length-1] < n; a[a.length-1] = a[a.length-3] + a[a.length-2]);
+  if(n<0){return [];}
+  if(n<1){return [0];}
+  var a = [0,1];
+  var next = 1;
+  while(next < n) {
+    a[a.length] = next;
+    next = a[a.length-2] + a[a.length-1];
+  }
   return a
 };
 
+var fac = function(n) {
+  if(n===0){return 1;}
+  return n*fac(n-1);
+};
+
 var isPrimeWilson = function(n) {
-  return math.factorial(n-1) % n === n-1;
+  return fac(n-1) % n === n-1;
 };
 
 var isPrime = function(n) {
@@ -19,4 +30,17 @@ var isPrime = function(n) {
   return true;
 };
 
+console.log("fibLessThan(20)");
+console.log(fibLessThan(20));
 
+console.log("isPrimeWilson(23)");
+console.log(isPrimeWilson(23));
+console.log("fac(22)%23");
+console.log(fac(22)%23);
+console.log("isPrimeWilson(53)");
+console.log(isPrimeWilson(53));
+console.log("fac(52)%53");
+console.log(fac(52)%53);
+
+console.log("isPrime(53)");
+console.log(isPrime(53));
