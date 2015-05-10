@@ -35,10 +35,15 @@ console.log(fibLessThan(20));
 
 console.log("isPrimeWilson(23)");
 console.log(isPrimeWilson(23));
+console.log("fac(22)");
+console.log(fac(22));
 console.log("fac(22)%23");
 console.log(fac(22)%23);
 console.log("isPrimeWilson(53)");
+console.log("53 is prime; fac(52) seems to be overflowing the capacity of js's large number representation and automatically rounding");
 console.log(isPrimeWilson(53));
+console.log("fac(52)");
+console.log(fac(52));
 console.log("fac(52)%53");
 console.log(fac(52)%53);
 
